@@ -1,0 +1,3 @@
+
+<%= f.text_field :description %>
+<%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>

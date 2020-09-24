@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card">
+    <img src="#">
+    <h1><%= @cocktail.name %></h1>
+    <% @cocktail.doses.each do |d| %>
+    <div class="ingredient-card">
+      <p><%= d.description %></p>
+      <p><%= Ingredient.find(d.ingredient_id).name %></p>
+    </div>
+    <% end %>
+    <%= link_to "Go Back To Cocktails", cocktails_path, class: "btn btn-primary" %>
+    <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "btn btn-warning" %>
+  </div>
+</div>
