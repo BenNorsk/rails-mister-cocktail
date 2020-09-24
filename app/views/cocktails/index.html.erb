@@ -1,15 +1,25 @@
+<nav class="navbar navbar-light bg-dark justify-content-between">
+    <a class="navbar-brand text-info">My Cocktails</a>
+    <%= link_to "Create New Cocktail", new_cocktail_path, class: "btn btn-outline-success my-2 my-sm-0" %>
+</nav>
+
+<%=  image_tag("my_bar") %>
+
 <div class="container">
-  <h1>Your Cocktails</h2>
-    <%= link_to "Create New Cocktail", new_cocktail_path, class: "btn btn-success" %>
-    <div class="row">
+
+<div class="row">
   <% @cocktails.each do |c| %>
-     <div class="card col-4">
-      <img src="#">
-      <h4><%= c.name  %></h4>
-      <%= link_to "Show Details", cocktail_path(c), class: "btn btn-primary" %>
-      <%= link_to "Delete The Cocktail", cocktail_path(c), method: :delete, class: "btn btn-danger"  %>
+     <div class="col-3">
+        <div class="card p-3 m-1">
+          <img src="<%=  "https://source.unsplash.com/featured/?#{c.name}" %>" class="card-img-top img-card">
+        <h4><%= c.name  %></h4>
+        <%= link_to "Show Details", cocktail_path(c), class: "btn btn-primary" %>
+        <%= link_to "Delete The Cocktail", cocktail_path(c), method: :delete, class: "btn btn-danger"  %>
+        </div>
      </div>
   <% end %>
   </div>
 
 </div>
+
+
