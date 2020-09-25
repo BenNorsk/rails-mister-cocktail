@@ -25,6 +25,7 @@ gem 'simple_form'
 gem "cocoon"
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+gem 'json'
 
 
 # Use Redis adapter to run Action Cable in production

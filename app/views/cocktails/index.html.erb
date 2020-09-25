@@ -9,12 +9,22 @@
   <br>
   <br>
 
+<% require "json" %>
 <div class="row">
   <% @cocktails.each do |c| %>
+
+
      <div class="col-xs-12 col-sm-6 col-lg-4">
         <a href="/cocktails/<%= c.id %>" style="text-decoration: none;">
         <div class="card p-3 m-1 rounded wooden dynamic-card">
-          <div class="cocktail-img" style="background-image: linear-gradient(to bottom, rgba(120, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('<%=  "https://source.unsplash.com/featured/?#{c.name}" %>')"></div>
+          <% if c.photo.attached? %>
+            <% json = Cloudinary::Api.resource(c.photo.key, options={}) %>
+            <% url = json["url"] %>
+            <div class='cocktail-img' style='background-image: url(<%= url %>)'></div>
+          <% else %>
+            <div class="cocktail-img" style="background-image: linear-gradient(to bottom, rgba(120, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("<%=  "https://source.unsplash.com/featured/?#{c.name}" %>")"></div>
+          <% end %>
+          <!-- Here is the text of the cards -->
           <div class="text-card">
             <h3 class="text-inside-card"><%= c.name %></h3>
             <a class="delete-symbol" href="<% link_to  cocktail_path(c), method: :delete %>"><i class="fas fa-trash-alt"></i></a>

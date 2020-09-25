@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container container-ben">
   <%= simple_form_for @cocktail do |f| %>
   <div class="field">
     <%= f.label :name %>
     <br>
     <%= f.text_field :name %>
+    <br>
+    <%= f.input :photo, as: :file %>
   </div>
   <h3>Ingredients</h3>
   <div id="ingredients">
