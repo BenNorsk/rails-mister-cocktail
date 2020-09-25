@@ -35,10 +35,14 @@
             <div class='cocktail-img rounded' style='background-image: url(<%= url %>)'>
               <h3 class="text-inside-card"><%= c.name %></h3>
             </div>
+            <br>
+            <br>
           <% else %>
             <div class="cocktail-img rounded" style="background-image: linear-gradient(to bottom, rgba(120, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('<%=  "https://source.unsplash.com/featured/?#{c.name}" %>')">
               <h3 class="text-inside-card"><%= c.name %></h3>
             </div>
+            <br>
+            <br>
           <% end %>
         </div>
       </a>
