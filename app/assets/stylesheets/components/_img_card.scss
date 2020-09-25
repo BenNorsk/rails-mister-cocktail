@@ -13,3 +13,21 @@
   height: 300px;
   object-fit: cover;
 }
+
+.cocktail-img {
+  width: 200px;
+  height: 160px;
+  background-size: cover;
+  margin: 0 auto;
+  box-shadow: 2px 2px 10px black;
+}
+
+.text-card {
+  justify-content: space-between;
+  color: rgba(230,100,100,0.9);
+  margin: 20px;
+}
+
+.text-inside-card {
+  color: rgba(230,100,100,0.9);
+}
