@@ -22,7 +22,7 @@
             <% url = json["url"] %>
             <div class='cocktail-img' style='background-image: url(<%= url %>)'></div>
           <% else %>
-            <div class="cocktail-img" style="background-image: linear-gradient(to bottom, rgba(120, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("<%=  "https://source.unsplash.com/featured/?#{c.name}" %>")"></div>
+            <div class="cocktail-img" style="background-image: linear-gradient(to bottom, rgba(120, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('<%=  "https://source.unsplash.com/featured/?#{c.name}" %>')"></div>
           <% end %>
           <!-- Here is the text of the cards -->
           <div class="text-card">
