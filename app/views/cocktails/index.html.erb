@@ -1,20 +1,22 @@
-<nav class="navbar navbar-light bg-dark justify-content-between">
-    <a class="navbar-brand text-info">My Cocktails</a>
+<nav class="navbar navbar-lewagon navbar-light bg-black justify-content-between">
+    <a class="navbar-brand text-info">Brückner's Cocktails</a>
     <%= link_to "Create New Cocktail", new_cocktail_path, class: "btn btn-outline-success my-2 my-sm-0" %>
 </nav>
 
-<%=  image_tag("my_bar") %>
+<%=  image_tag("my_bar2.png", class: "title-img") %>
 
 <div class="container">
+  <br>
+  <br>
 
 <div class="row">
   <% @cocktails.each do |c| %>
      <div class="col-3">
-        <div class="card p-3 m-1">
-          <img src="<%=  "https://source.unsplash.com/featured/?#{c.name}" %>" class="card-img-top img-card">
-        <h4><%= c.name  %></h4>
-        <%= link_to "Show Details", cocktail_path(c), class: "btn btn-primary" %>
-        <%= link_to "Delete The Cocktail", cocktail_path(c), method: :delete, class: "btn btn-danger"  %>
+        <div class="card p-3 m-1 rounded wooden dynamic-card">
+          <img src="<%=  "https://source.unsplash.com/featured/?#{c.name}" %>" class="card-img-top img-card rounded bg-gradient-primary">
+          <h4 class="m-2"><%= c.name  %></h4>
+          <%= link_to "Show Details", cocktail_path(c), class: "btn btn-primary" %>
+          <%= link_to "Delete The Cocktail", cocktail_path(c), method: :delete, class: "btn btn-danger"  %>
         </div>
      </div>
   <% end %>

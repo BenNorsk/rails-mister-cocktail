@@ -1,0 +1,8 @@
+.dynamic-card {
+  transition: all .2s ease-in-out;
+}
+
+
+.dynamic-card:hover {
+  transform: scale(1.05);
+}
