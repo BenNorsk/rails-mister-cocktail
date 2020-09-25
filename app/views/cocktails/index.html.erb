@@ -1,34 +1,45 @@
+
 <nav class="navbar navbar-lewagon navbar-light bg-black justify-content-between">
-    <a class="navbar-brand text-info">Brückner's Cocktails</a>
+    <a class="navbar-brand text-info" href="/">Brückner's Cocktails</a>
     <%= link_to "Create New Cocktail", new_cocktail_path, class: "btn btn-outline-success my-2 my-sm-0" %>
 </nav>
 
 <%=  image_tag("my_bar2.png", class: "title-img") %>
 
+<div class="audio-div">
+    <h2 class="field-ben">Listen to our tunes.</h2>
+    <br>
+    <audio controls>
+      <source src="https://res.cloudinary.com/dwrbwadlt/video/upload/v1601042785/Theme_Schindler_s_List_violin_solo_ed60nj.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
 <div class="container">
   <br>
   <br>
 
-<% require "json" %>
-<div class="row">
+
+
+
+  <div class="row">
   <% @cocktails.each do |c| %>
 
 
      <div class="col-xs-12 col-sm-6 col-lg-4">
         <a href="/cocktails/<%= c.id %>" style="text-decoration: none;">
-        <div class="card p-3 m-1 rounded wooden dynamic-card">
+        <div class="rounded wooden dynamic-card">
           <% if c.photo.attached? %>
             <% json = Cloudinary::Api.resource(c.photo.key, options={}) %>
             <% url = json["url"] %>
-            <div class='cocktail-img' style='background-image: url(<%= url %>)'></div>
+            <div class='cocktail-img rounded' style='background-image: url(<%= url %>)'>
+              <h3 class="text-inside-card"><%= c.name %></h3>
+            </div>
           <% else %>
-            <div class="cocktail-img" style="background-image: linear-gradient(to bottom, rgba(120, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('<%=  "https://source.unsplash.com/featured/?#{c.name}" %>')"></div>
+            <div class="cocktail-img rounded" style="background-image: linear-gradient(to bottom, rgba(120, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('<%=  "https://source.unsplash.com/featured/?#{c.name}" %>')">
+              <h3 class="text-inside-card"><%= c.name %></h3>
+            </div>
           <% end %>
-          <!-- Here is the text of the cards -->
-          <div class="text-card">
-            <h3 class="text-inside-card"><%= c.name %></h3>
-            <a class="delete-symbol" href="<% link_to  cocktail_path(c), method: :delete %>"><i class="fas fa-trash-alt"></i></a>
-          </div>
         </div>
       </a>
      </div>

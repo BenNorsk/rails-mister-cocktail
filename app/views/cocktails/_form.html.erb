@@ -1,3 +1,12 @@
+<nav class="navbar navbar-lewagon navbar-light bg-black justify-content-between">
+    <a class="navbar-brand text-info" href="/">Brückner's Cocktails</a>
+    <%= link_to "Create New Cocktail", new_cocktail_path, class: "btn btn-outline-success my-2 my-sm-0" %>
+</nav>
+<div>
+  <!-- <div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/10TZs8ho7qJeVy" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div> -->
+</div>
+
+
 <div class="container container-ben">
   <%= simple_form_for @cocktail do |f| %>
   <div class="field field-ben">

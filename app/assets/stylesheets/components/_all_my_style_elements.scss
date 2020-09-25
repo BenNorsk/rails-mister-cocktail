@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+// font-family: 'Permanent Marker', cursive;
 .wooden {
-  background-image: url("https://res.cloudinary.com/dwrbwadlt/image/upload/v1601028491/y26dniiqiyguu7yp7hlf.jpg")
+ background-color: black;
 }
 
 .container-ben {
@@ -11,4 +13,13 @@
 
 .field-ben {
   color: white;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.audio-div {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0;
+  text-align: center;
+  background-image: url("https://res.cloudinary.com/dwrbwadlt/image/upload/v1601028491/y26dniiqiyguu7yp7hlf.jpg");
 }
